@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `myhostel`;
+CREATE DATABASE  IF NOT EXISTS `myhostel` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `myhostel`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
@@ -31,7 +31,8 @@ CREATE TABLE `adminlogin` (
   PRIMARY KEY (`username`),
   KEY `MID` (`MID`),
   CONSTRAINT `adminlogin_ibfk_1` FOREIGN KEY (`MID`) REFERENCES `manager` (`MID`)
-); 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `adminlogin`
@@ -63,7 +64,9 @@ CREATE TABLE `care_taker` (
   PRIMARY KEY (`CTID`),
   KEY `CTHID` (`CTHID`),
   CONSTRAINT `care_taker_ibfk_1` FOREIGN KEY (`CTHID`) REFERENCES `hostel` (`HID`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `care_taker`
 --
@@ -89,7 +92,9 @@ CREATE TABLE `complaints` (
   PRIMARY KEY (`ID`),
   KEY `Rno` (`Rno`),
   CONSTRAINT `complaints_ibfk_1` FOREIGN KEY (`Rno`) REFERENCES `room` (`RNo`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `complaints`
 --
@@ -111,7 +116,9 @@ CREATE TABLE `hostel` (
   `HName` varchar(50) NOT NULL,
   `HCapacity` int NOT NULL,
   PRIMARY KEY (`HID`)
-); 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `hostel`
 --
@@ -139,7 +146,8 @@ CREATE TABLE `invoice` (
   PRIMARY KEY (`IID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `invoice`
@@ -170,7 +178,8 @@ CREATE TABLE `manager` (
   PRIMARY KEY (`MID`),
   KEY `MHID` (`MHID`),
   CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`MHID`) REFERENCES `hostel` (`HID`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `manager`
@@ -213,7 +222,8 @@ CREATE TABLE `mess_off` (
   PRIMARY KEY (`ID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `mess_off_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `mess_off`
@@ -236,7 +246,8 @@ CREATE TABLE `mess_weekly_menu` (
   `BREAKFAST` varchar(50) NOT NULL,
   `LUNCH` varchar(50) NOT NULL,
   `DINNER` varchar(50) NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `mess_weekly_menu`
@@ -264,7 +275,8 @@ CREATE TABLE `parcel` (
   PRIMARY KEY (`ID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `parcel_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `parcel`
@@ -289,7 +301,8 @@ CREATE TABLE `room` (
   PRIMARY KEY (`RNo`),
   KEY `RHID` (`RHID`),
   CONSTRAINT `room_ibfk_1` FOREIGN KEY (`RHID`) REFERENCES `hostel` (`HID`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `room`
@@ -298,7 +311,6 @@ CREATE TABLE `room` (
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
 INSERT INTO `room` VALUES (1,3,'1'),(2,3,'1'),(3,3,'1'),(4,3,'1'),(5,3,'2'),(6,3,'1'),(7,3,'1'),(8,3,'1'),(9,3,'1'),(10,3,'1'),(11,3,'1'),(12,3,'1'),(13,3,'1'),(14,3,'1'),(15,3,'1'),(16,3,'1'),(17,3,'1'),(18,3,'1'),(19,3,'1'),(20,3,'1'),(21,3,'1'),(22,3,'1'),(23,3,'1'),(24,3,'1'),(25,3,'1'),(26,3,'1'),(27,3,'1'),(28,3,'1'),(29,3,'1'),(30,3,'1'),(31,3,'1'),(32,3,'1'),(33,3,'1'),(34,3,'1'),(35,3,'1'),(36,3,'1'),(37,3,'1'),(38,3,'1'),(39,3,'1'),(40,3,'1'),(41,3,'1'),(42,3,'1'),(43,3,'1'),(44,3,'1'),(45,3,'1'),(46,3,'1'),(47,3,'1'),(48,3,'1'),(49,3,'1'),(50,3,'1'),(51,3,'1'),(52,3,'1'),(53,3,'1'),(54,3,'1'),(55,3,'1'),(101,3,'2'),(102,3,'2'),(103,3,'2'),(104,3,'2'),(105,3,'2'),(106,3,'2'),(107,3,'2'),(108,3,'2'),(109,3,'2'),(110,3,'2'),(111,3,'2'),(112,3,'2'),(113,3,'2'),(114,3,'2'),(115,3,'2'),(116,3,'2'),(117,3,'2'),(118,3,'2'),(119,3,'2'),(120,3,'2'),(121,3,'2'),(122,3,'2'),(123,3,'2'),(124,3,'2'),(125,3,'2'),(126,3,'2'),(127,3,'2'),(128,3,'2'),(129,3,'2'),(130,3,'2'),(131,3,'2'),(132,3,'2'),(133,3,'2'),(134,3,'2'),(135,3,'2'),(136,3,'2'),(137,3,'2'),(138,3,'2'),(139,3,'2'),(140,3,'2'),(141,3,'2'),(142,3,'2'),(143,3,'2'),(144,3,'2'),(145,3,'2'),(146,3,'2'),(147,3,'2'),(148,3,'2'),(149,3,'2'),(150,3,'2'),(151,3,'2'),(152,3,'2'),(153,3,'2'),(154,3,'2'),(155,3,'2'),(156,3,'2'),(157,3,'2'),(158,3,'2'),(159,3,'2'),(160,3,'2'),(161,3,'2'),(162,3,'2'),(163,3,'2'),(164,3,'2'),(165,3,'2'),(166,3,'2'),(167,3,'2'),(168,3,'2'),(169,3,'2'),(170,3,'2'),(171,3,'2'),(172,3,'2'),(327,3,'2');
-
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,7 +334,8 @@ CREATE TABLE `staff` (
   PRIMARY KEY (`SID`),
   KEY `SHID` (`SHID`),
   CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`SHID`) REFERENCES `hostel` (`HID`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `staff`
@@ -348,7 +361,8 @@ CREATE TABLE `staff_attendance` (
   PRIMARY KEY (`StAID`),
   KEY `SID` (`SID`),
   CONSTRAINT `staff_attendance_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `staff` (`SID`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `staff_attendance`
@@ -375,7 +389,8 @@ CREATE TABLE `staff_leave` (
   PRIMARY KEY (`SLID`),
   KEY `SID` (`SID`),
   CONSTRAINT `staff_leave_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `staff` (`SID`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `staff_leave`
@@ -402,7 +417,8 @@ CREATE TABLE `staff_salary` (
   PRIMARY KEY (`SSID`),
   KEY `SID` (`SID`),
   CONSTRAINT `staff_salary_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `staff` (`SID`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `staff_salary`
@@ -428,7 +444,8 @@ CREATE TABLE `staff_violation` (
   PRIMARY KEY (`StVID`),
   KEY `SID` (`SID`),
   CONSTRAINT `staff_violation_ibfk_1` FOREIGN KEY (`SID`) REFERENCES `staff` (`SID`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `staff_violation`
@@ -463,7 +480,8 @@ CREATE TABLE `student` (
   KEY `student_ibfk_4` (`SHID`),
   CONSTRAINT `student_ibfk_3` FOREIGN KEY (`SRNo`) REFERENCES `room` (`RNo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `student_ibfk_4` FOREIGN KEY (`SHID`) REFERENCES `hostel` (`HID`) ON DELETE CASCADE ON UPDATE CASCADE
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `student`
@@ -490,7 +508,8 @@ CREATE TABLE `student_attendance` (
   PRIMARY KEY (`SAID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `student_attendance_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `student_attendance`
@@ -516,7 +535,8 @@ CREATE TABLE `student_violation` (
   PRIMARY KEY (`VID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `student_violation_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `student_violation`
@@ -545,7 +565,8 @@ CREATE TABLE `studentin_out` (
   KEY `id` (`ID`),
   KEY `studentin_out_ibfk_1` (`CMS`),
   CONSTRAINT `studentin_out_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `studentin_out`
@@ -570,7 +591,8 @@ CREATE TABLE `studentlogin` (
   PRIMARY KEY (`email`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `studentlogin_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `studentlogin`
@@ -598,7 +620,8 @@ CREATE TABLE `suggestions` (
   PRIMARY KEY (`ID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `suggestions_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `suggestions`
@@ -628,7 +651,8 @@ CREATE TABLE `visitor` (
   PRIMARY KEY (`VID`),
   KEY `CMS` (`CMS`),
   CONSTRAINT `visitor_ibfk_1` FOREIGN KEY (`CMS`) REFERENCES `student` (`CMS`) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `visitor`
@@ -648,7 +672,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -667,7 +691,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -711,7 +735,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -733,7 +757,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -752,7 +776,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -771,7 +795,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -793,7 +817,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -812,7 +836,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -833,7 +857,7 @@ DELIMITER ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
 /*!50003 SET character_set_client  = utf8mb4 */ ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
@@ -859,7 +883,7 @@ DELIMITER ;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
 /*!50001 SET character_set_client      = utf8mb4 */;
 /*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `menu` AS select `mess_weekly_menu`.`Day` AS `Day`,`mess_weekly_menu`.`BREAKFAST` AS `BREAKFAST`,`mess_weekly_menu`.`LUNCH` AS `LUNCH`,`mess_weekly_menu`.`DINNER` AS `DINNER` from `mess_weekly_menu` */;
